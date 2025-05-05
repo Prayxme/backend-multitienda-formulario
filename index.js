@@ -105,6 +105,11 @@ app.post('/submit-form', upload.fields([
   }
 });
 
+//endpoint para verificar que el servidor está activo
+app.get('/ping', (req, res) => {
+  res.status(200).send('Servidor activo');
+});
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Servidor escuchando en el puerto ${PORT}`);
